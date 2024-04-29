@@ -1,0 +1,16 @@
+$$PROJECT$$
+  <PropertyGroup>
+    <TargetFramework>$$TARGET_VERSION$$</TargetFramework>	  
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>$$AssemblyTitle$$</AssemblyTitle>
+	$$AssemblyName$$
+    <Product>$$Product$$</Product>
+    <Copyright>Copyright @2024</Copyright>	
+    <FileVersion>1.0.0</FileVersion>
+  </PropertyGroup>  
+  $$PROJECT_REFERENCE$$
+  <ItemGroup>    
+$$PACKAGE_REFERENCE$$
+  </ItemGroup>
+</Project>

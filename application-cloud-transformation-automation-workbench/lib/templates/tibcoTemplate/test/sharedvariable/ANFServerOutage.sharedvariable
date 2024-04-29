@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <name>ANFServerOutage</name>
+    <resourceType>ae.shared.sharedVariable</resourceType>
+    <config>
+        <persistent>false</persistent>
+        <multi-engine>false</multi-engine>
+        <initialValue>none</initialValue>
+        <xsdString>
+            <xsd:element name="ANFServerOutage" type="xsd:string"/>
+        </xsdString>
+    </config>
+</BWSharedResource>

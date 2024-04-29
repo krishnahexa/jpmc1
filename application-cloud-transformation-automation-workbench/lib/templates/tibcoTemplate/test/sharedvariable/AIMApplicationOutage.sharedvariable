@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <name>AIMApplicationOutage</name>
+    <resourceType>ae.shared.sharedVariable</resourceType>
+    <config>
+        <persistent>false</persistent>
+        <multi-engine>false</multi-engine>
+        <initialValue>none</initialValue>
+        <initialValueData>&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;AIMApplicationOutage/&gt;</initialValueData>
+        <xsdString>
+            <xsd:element name="AIMApplicationOutage" type="xsd:string"/>
+        </xsdString>
+    </config>
+</BWSharedResource>

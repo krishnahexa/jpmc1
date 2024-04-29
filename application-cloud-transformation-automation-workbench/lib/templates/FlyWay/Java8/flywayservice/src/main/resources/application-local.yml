@@ -1,0 +1,44 @@
+spring: 
+  datasource: 
+    driver-class-name: org.postgresql.Driver
+    hikari: 
+      schema: 
+    password: 
+    url: 
+    username: 
+  flyway:
+    enabled: true
+    baseline-description: << Flyway Baseline >>
+    baseline-on-migrate: true
+    baseline-version: 0.0
+    connect-retries: 3
+    table:  flyway_schema_history
+    locations: classpath:db/migration
+    schemas: 
+    check-location: false
+    installed-by: pgOWmFcl 
+    sql-migration-prefix: V 
+    repeatable-sql-migration-prefix: R
+    sql-migration-separator: __
+    sql-migration-suffixes: .sql
+    group: false
+    clean-disabled: false  
+  mail:
+    host: smtp.eu.boehringer.com
+    port: 25
+    properties:
+      mail:
+        debug: false
+        smtp:
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+        transport:
+          protocol: smtp
+smtp: 
+  email: 
+    from: 
+    to:
+    failureSubject: FATAL - Flyway Execution Failed !!!
+    successSubject: SUCCESS - Flyway Execution Success !!!
+    attachementFileName: error.txt

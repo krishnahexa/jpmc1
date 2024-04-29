@@ -1,0 +1,502 @@
+<testingFileReadActivityInputConfig_testservice>
+<config>
+    <activityName>testingFileReadActivityInputConfig</activityName>
+	<encoding>text</encoding>
+</config>
+</testingFileReadActivityInputConfig_testservice>
+<testingJSONParserActivity_testservice>
+	<config>
+        <activityName>JSONParserActivity</activityName>
+		<SchemaType>generic</SchemaType>
+		<BadgerfishCheck>false</BadgerfishCheck>
+		<validateOutputEnable>true</validateOutputEnable>
+		<activityOutputEditor ref="pfx7:AIMLog2" />
+	</config>
+</testingJSONParserActivity_testservice>
+<testingJSONParserActivityExp_testservice>
+	<config>
+        <activityName>JSONParserActivity</activityName>
+		<SchemaType>generic</SchemaType>
+		<BadgerfishCheck>false</BadgerfishCheck>
+		<validateOutputEnable>false</validateOutputEnable>
+		<activityOutputEditor ref="pfx7:AIMLog2" />
+	</config>
+</testingJSONParserActivityExp_testservice>
+<testingJSONRenderAtivityInputConfig_testservice>
+<config>
+    <activityName>JSONRenderAtivityInputConfig</activityName>
+	<SchemaType>xsdType</SchemaType>
+	<BadgerfishCheck>false</BadgerfishCheck>
+	<validateInputEnable>true</validateInputEnable>
+	<removeRootElementForInput>true</removeRootElementForInput>
+	<activityInputEditor ref="pfx7:AIMLog2" />
+</config>
+</testingJSONRenderAtivityInputConfig_testservice>
+<testingJSONRenderAtivityInputConfigExp_testservice>
+<config>
+    <activityName>JSONRenderAtivityInputConfig</activityName>
+	<SchemaType>xsdType</SchemaType>
+	<BadgerfishCheck>false</BadgerfishCheck>
+	<validateInputEnable>false</validateInputEnable>
+	<removeRootElementForInput>true</removeRootElementForInput>
+	<activityInputEditor ref="pfx7:AIMLog2" />
+</config>
+</testingJSONRenderAtivityInputConfigExp_testservice>
+<testingLogAtivityInputConfig_testservice>
+<config>
+    <activityName>LogAtivityInputConfig</activityName>
+	<role>User</role>
+</config>
+</testingLogAtivityInputConfig_testservice>
+<testingXMLParserAtivityInputConfig_testservice>
+<config>
+    <activityName>XMLParserAtivityInputConfig</activityName>
+	<inputStyle>text</inputStyle>
+	<xsdVersion>default</xsdVersion>
+	<validateOutput>false</validateOutput>
+	<term ref="pfx7:AIMLog2" />
+</config>
+</testingXMLParserAtivityInputConfig_testservice>
+<testingXMLParserAtivityInputConfigExp_testservice>
+<config>
+    <activityName>XMLParserAtivityInputConfig</activityName>
+	<inputStyle>text</inputStyle>
+	<xsdVersion>default</xsdVersion>
+	<validateOutput>true</validateOutput>
+	<term ref="pfx7:AIMLog2" />
+</config>
+</testingXMLParserAtivityInputConfigExp_testservice>
+<testingXMLRenderAtivityInputConfig_testservice>
+<config>
+    <activityName>XMLRenderAtivityInputConfig</activityName>
+	<renderAsText>text</renderAsText>
+    <validateInput>ture</validateInput>
+	<term ref="pfx7:AIMLog2" />
+</config>
+</testingXMLRenderAtivityInputConfig_testservice>
+<testingXMLRenderAtivityInputConfigExp_testservice>
+<config>
+    <activityName>XMLRenderAtivityInputConfig</activityName>
+	<renderAsText>text</renderAsText>
+    <validateInput>true</validateInput>
+	<term ref="pfx7:AIMLog2" />
+</config>
+</testingXMLRenderAtivityInputConfigExp_testservice>
+<testingXMLRenderTransformInputConfig_testservice>
+<config>
+    <activityName>XMLRenderTransformInputConfig</activityName>
+	<inputStyle>text</inputStyle>
+	<engine>TibcoXML</engine>
+	<stylesheet>xmlTransformActivityTest.xslt</stylesheet>
+</config>
+</testingXMLRenderTransformInputConfig_testservice>
+<testingJavaMethodActivity_testservice>
+<config>
+    <activityName>JavaMethodActivity</activityName>
+	<ConstructDeclaredClass>false</ConstructDeclaredClass>
+	<CacheConstructedClass>false</CacheConstructedClass>
+	<InvokeCleanupMethod>false</InvokeCleanupMethod>
+	<MethodInfo>
+		<className>com.,.commonutil.utils.JavaMethodActivityTest</className>
+		<methodName>customerTest</methodName>
+		<methodReturn>java.lang.String</methodReturn>
+		<methodParameter>java.lang.String</methodParameter>
+	</MethodInfo>
+</config>
+</testingJavaMethodActivity_testservice>
+<testingJavaActivity_testservice>
+<config>
+    <activityName>JavaActivity</activityName>
+	<fileName>MethodActivityTest</fileName>
+	<packageName>BusinessProcesses.Subprocess.AIM.SharedProcesses.LogonToOnDemandUsingARSWWWINI
+	</packageName>
+	<fullsource>package
+		BusinessProcesses.Subprocess.AIM.SharedProcesses.TestingInvokeClass;
+		//import com.tibco.share.util.*;
+		import java.util.*;
+
+	</fullsource>
+	<inputData>
+		<row>
+			<fieldName>userid</fieldName>
+			<fieldType>string</fieldType>
+			<fieldRequired>optional</fieldRequired>
+		</row>
+		<row>
+			<fieldName>password</fieldName>
+			<fieldType>string</fieldType>
+			<fieldRequired>optional</fieldRequired>
+		</row>
+	</inputData>
+	<outputData>
+
+		<row>
+			<fieldName>userid2</fieldName>
+			<fieldType>string</fieldType>
+			<fieldRequired>optional</fieldRequired>
+		</row>
+		<row>
+			<fieldName>password2</fieldName>
+			<fieldType>string</fieldType>
+			<fieldRequired>optional</fieldRequired>
+		</row>
+
+	</outputData>
+	<byteCode>
+		<class>
+			<name>LogonToOnDemandUsingARSWWWINILogonToOnDemand</name>			
+		</class>
+	</byteCode>
+</config> 
+</testingJavaActivity_testservice>
+<testingGetContext_testservice>
+<config>
+    <activityName>GetContext</activityName>
+	<variableConfig>/SharedResources/Contexts/RequestHeader.contextResource</variableConfig>
+</config>
+</testingGetContext_testservice>
+<testingJDBCCallActivity_testservice>
+<config>
+    <activityName>JDBCCallActivity</activityName>
+	<timeout>%%SharedResources/Connections/JDBC/AIMTimeout%%</timeout>
+	<maxRows>%%SharedResources/Connections/JDBC/AIMMaxRows%%</maxRows>
+	<emptyStrAsNil>false</emptyStrAsNil>
+    <statement>Select fileName, content, description from PUBLIC.HELLO_VIEW where fileName = ? and content = ? and description = ?;</statement>
+	<jdbcSharedConfig>/SharedResources/Connections/JDBC/JDBCDB2AIM.sharedjdbc</jdbcSharedConfig>
+	<schema>AIM</schema>
+	<ProcedureName>HELLO</ProcedureName>
+	<parameterTypes>
+		<parameter>
+			<colName>FILENAME</colName>
+			<colType>1</colType>
+			<dataType>12</dataType>
+			<typeName>VARCHAR</typeName>
+		</parameter>
+		<parameter>
+			<colName>CONTENT</colName>
+			<colType>1</colType>
+			<dataType>12</dataType>
+			<typeName>VARCHAR</typeName>
+		</parameter>
+		<parameter>
+			<colName>DESC</colName>
+			<colType>1</colType>
+			<dataType>12</dataType>
+			<typeName>VARCHAR</typeName>
+		</parameter>		
+	</parameterTypes>
+</config>
+</testingJDBCCallActivity_testservice>
+<testingRVEventSource_testservice>
+<config>
+    <activityName>RVEventSource</activityName>
+	<wantsValidationForOutput>false</wantsValidationForOutput>
+	<wantsFiltrationForOutput>false</wantsFiltrationForOutput>
+	<wantsXMLCompliantFieldNames>false</wantsXMLCompliantFieldNames>
+	<wantsRawRVObjectForOutput>false</wantsRawRVObjectForOutput>
+	<sharedChannel>/SharedResources/Connections/RVTransport/RetransmitBulkRequest_RV_Sub.rvtransport</sharedChannel>
+	<subject>%%SharedResources/Process/AcceptAIMRetrievalRequest/Bulk/RetransmitSubject%%</subject>
+	<xsdString>
+		<xsd:element name="DATA" type="xsd:string" />
+	</xsdString>
+</config>
+</testingRVEventSource_testservice>
+<testingRVRequestActivity_testservice>
+<config>
+    <activityName>RVRequestActivity</activityName>
+	<wantsValidationForOutput>true</wantsValidationForOutput>
+	<wantsFiltrationForOutput>true</wantsFiltrationForOutput>
+	<wantsXMLCompliantFieldNames>false</wantsXMLCompliantFieldNames>
+	<wantsXMLCompliantFieldNamesOutput>false</wantsXMLCompliantFieldNamesOutput>
+	<sharedChannel>/SharedResources/Connections/RV/ImageHitlist.rvtransport</sharedChannel>
+	<operationTimeout />
+	<subject>%%SharedResources/Connections/RVTransport/ImageHitlist/Subject%%</subject>
+	<inputXsdString>
+		<xsd:element name="root">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="DATA" type="pfx5:AIMHitlistRequest" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</inputXsdString>
+	<outputXsdString>
+		<xsd:element name="root">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="DATA" type="pfx5:AIMImageHitlistReply" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</outputXsdString>
+</config>
+</testingRVRequestActivity_testservice>
+<testingParseActivity_testservice>
+<config>
+    <activityName>ParseActivity</activityName>
+	<InputType>File</InputType>
+	<Encoding>ASCII</Encoding>
+	<ParseSharedConfig>/SharedVariables/JobSharedVariables/AIMBulkFileWithPayeeName.sharedvariable</ParseSharedConfig>
+	<SkipBlankLines>false</SkipBlankLines>
+</config>
+</testingParseActivity_testservice>
+<testingMqPutActivity_testservice>
+<config>
+    <activityName>MqPutActivity</activityName>
+	<version>7.06.00</version>
+	<contentType>Text</contentType>
+	<desttype>QUEUE</desttype>
+	<dynamic>false</dynamic>
+	<lastSegment>false</lastSegment>
+	<persistence>Persist as queue def</persistence>
+	<messagetype>MQMT_DATAGRAM</messagetype>
+	<expiration>0</expiration>
+	<priority>0</priority>
+	<reportCoaOptions>None</reportCoaOptions>
+	<reportCodOptions>None</reportCodOptions>
+	<reportExceptionOptions>None</reportExceptionOptions>
+	<reportExpiryOptions>None</reportExpiryOptions>
+	<multiMessage>None</multiMessage>
+	<segmentedMaxSize>0</segmentedMaxSize>
+	<asyncPut>false</asyncPut>
+	<passContext>all</passContext>
+	<clusterloadbalance>false</clusterloadbalance>
+	<segmentation>None</segmentation>
+	<connectionresource>/SharedResources/Connections/MQ/WebSphere MQ Connection.mqcon</connectionresource>
+	<destination>%%SharedResources/Viewpointe/QueueVMSSubtask%%</destination>
+</config>
+</testingMqPutActivity_testservice>
+<testingRVReplyActivity_testservice>
+<config>
+    <activityName>RVReplyActivity</activityName>
+	<wantsXMLCompliantFieldNames>false</wantsXMLCompliantFieldNames>
+	<eventSource>ReceiveVP2BatchRetrievalRequest</eventSource>
+	<xsdString>
+		<xsd:element name="root">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="DATA" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsdString>
+</config>
+</testingRVReplyActivity_testservice>
+<testingJMSQueueRequestReplyActivity_testservice>
+<config>
+    <activityName>JMSQueueRequestReplyActivity</activityName>
+	<PermittedMessageType>XML Text</PermittedMessageType>
+	<SessionAttributes>
+		<transacted>false</transacted>
+		<acknowledgeMode>1</acknowledgeMode>
+		<maxSessions>1</maxSessions>
+		<destination>%%SharedResources/Connections/EMS/ADBQueue%%</destination>
+	</SessionAttributes>
+	<ConfigurableHeaders>
+		<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+		<JMSExpiration>0</JMSExpiration>
+		<JMSPriority>4</JMSPriority>
+	</ConfigurableHeaders>
+	<ConnectionReference>/SharedResources/Connections/JMS/EMSQueueConnectionJNDISSL.sharedjmscon</ConnectionReference>
+	<InDataxsdString ref="pfx6:SQL__REQUEST" />
+	<OutDataxsdString ref="pfx6:SQL__BATCHRETURN" />
+</config>
+</testingJMSQueueRequestReplyActivity_testservice>
+<testingFileWriteActivity_testservice>
+<config>
+    <activityName>FileWriteActivity</activityName>
+	<encoding>text</encoding>
+	<compressFile>None</compressFile>
+	<append>false</append>
+	<createMissingDirectories>true</createMissingDirectories>
+</config>
+</testingFileWriteActivity_testservice>
+<testingRenderActivity_testservice>
+<config>
+    <activityName>RenderActivity</activityName>
+	<ParseSharedConfig>/SharedResources/SharedConfiguration/abcd.sharedparse</ParseSharedConfig>
+</config>
+</testingRenderActivity_testservice>
+<testingEnginecommand_testservice>
+<config>
+    <activityName>Enginecommand</activityName>
+	<command>Shutdown</command>
+</config>
+</testingEnginecommand_testservice>
+<testingXmlToJavaActivity_testservice>
+<config>
+    <activityName>XmlToJavaActivity</activityName>
+	<Repeatable>false</Repeatable>
+	<UseJavaSchema>true</UseJavaSchema>
+	<JavaSchemaResource>/SharedResources/SchemaDefinitions/AIM/abcd.javaschema</JavaSchemaResource>
+	<SchemaClassName>amazebasePackage.model.AIMStatementHitlistRequest</SchemaClassName>
+</config>
+</testingXmlToJavaActivity_testservice>
+<testingtimer_testservice>
+<config>
+    <activityName>timer</activityName>
+	<StartTime>1262960828000</StartTime>
+	<Frequency>false</Frequency>
+	<TimeInterval>%%SharedResources/Ondemand/StatusTimer%%</TimeInterval>
+	<FrequencyIndex>Millisecond</FrequencyIndex>
+</config>
+</testingtimer_testservice>
+<testingListFilesActivity_testservice>
+<config>
+    <activityName>ListFilesActivity</activityName>
+	<mode>only-files</mode>
+</config>
+</testingListFilesActivity_testservice>
+<testingJavaToXmlActivity_testservice>
+<config>
+    <activityName>JavaToXmlActivity</activityName>
+	<Repeatable>false</Repeatable>
+	<UseJavaSchema>true</UseJavaSchema>
+	<ConstructDeclaredClass>false</ConstructDeclaredClass>
+	<CacheConstructedClass>false</CacheConstructedClass>
+	<JavaSchemaResource>/SharedResources/SchemaDefinitions/AIM/abcd.javaschema</JavaSchemaResource>
+	<SchemaClassName>amazebasePackage.model.AIMStatementHitlistOndemandReply</SchemaClassName>
+</config>
+</testingJavaToXmlActivity_testservice>
+
+<testingSetSharedVariable_testservice1>
+<config>
+	<activityName>SetSharedVariableActivity</activityName>
+	<variableConfig>/SharedVariables/JobSharedVariables/AIMApplicationOutage.sharedvariable</variableConfig>
+	<showResult>true</showResult>
+</config>
+</testingSetSharedVariable_testservice1>
+<test_JdbcQueryActivity>
+<config>
+            <timeout>%%SharedResources/Connections/TotalSlowResponseTime%%</timeout>
+            <maxRows>100</maxRows>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>select fileName, content, description from xmlFileStore where fileName = ? and content = ? and description = ?;</statement>
+            <jdbcSharedConfig>/SharedResources/Connections/JDBC/ABC_Connection.sharedjdbc</jdbcSharedConfig>
+            <schema>AIM</schema>
+            <ProcedureName></ProcedureName>
+            <output>
+                <QueryOutputCachedSchemaColumns>FILENAME</QueryOutputCachedSchemaColumns>
+                <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+                <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+                <QueryOutputCachedSchemaColumns>CONTENT</QueryOutputCachedSchemaColumns>
+                <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+                <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+                <QueryOutputCachedSchemaColumns>DESCRIPTION</QueryOutputCachedSchemaColumns>
+                <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+                <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            </output>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>fileName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>content</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>description</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+         </Prepared_Param_DataType>            
+    </config>
+</test_JdbcQueryActivity>
+<test_JdbcGeneralActivity>
+	<config>
+		<timeout>%%SharedResources/Connections/TotalSlowResponseTime%%</timeout>
+		<maxRows>%%SharedResources/Connections/JDBC/AIMMaxRows%%</maxRows>
+		<emptyStrAsNil>false</emptyStrAsNil>
+		<jdbcSharedConfig>/SharedResources/Connections/JDBC/ABC_Connection.sharedjdbc</jdbcSharedConfig>
+		<schema>AIM</schema>
+		<ProcedureName>CREATEAIMRETRIEVEDRETURNEDITEM</ProcedureName>
+		<parameterTypes>
+			<parameter>
+				<colName>FILENAME</colName>
+				<colType>1</colType>
+				<dataType>12</dataType>
+				<typeName>VARCHAR</typeName>
+			</parameter>
+			<parameter>
+				<colName>CONTENT</colName>
+				<colType>1</colType>
+				<dataType>12</dataType>
+				<typeName>VARCHAR</typeName>
+			</parameter>
+			<parameter>
+				<colName>DESCRIPTION</colName>
+				<colType>1</colType>
+				<dataType>12</dataType>
+				<typeName>VARCHAR</typeName>
+			</parameter>
+		</parameterTypes>
+	</config>
+</test_JdbcGeneralActivity>
+<test_JdbcQueryActivityExp>
+<config>
+            <timeout>%%SharedResources/Connections/TotalSlowResponseTime%%</timeout>
+            <maxRows>100</maxRows>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>select fileName, content, description from xmlFileStore where fileName = ? and content = ? and description = ?;</statement>
+            <jdbcSharedConfig>/SharedResources/Connections/JDBC/XYZ_Connection.sharedjdbc</jdbcSharedConfig>
+            <schema>AIM</schema>
+            <ProcedureName></ProcedureName>
+            <output>
+                <QueryOutputCachedSchemaColumns>FILENAME</QueryOutputCachedSchemaColumns>
+                <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+                <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+                <QueryOutputCachedSchemaColumns>CONTENT</QueryOutputCachedSchemaColumns>
+                <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+                <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+                <QueryOutputCachedSchemaColumns>DESCRIPTION</QueryOutputCachedSchemaColumns>
+                <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+                <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            </output>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>fileName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>content</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>description</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+         </Prepared_Param_DataType>            
+    </config>
+</test_JdbcQueryActivityExp>
+<test_JdbcGeneralActivityExp>
+	<config>
+		<timeout>%%SharedResources/Connections/TotalSlowResponseTime%%</timeout>
+		<maxRows>%%SharedResources/Connections/JDBC/AIMMaxRows%%</maxRows>
+		<emptyStrAsNil>false</emptyStrAsNil>
+		<jdbcSharedConfig>/SharedResources/Connections/JDBC/XYZ_Connection.sharedjdbc</jdbcSharedConfig>
+		<schema>AIM</schema>
+		<ProcedureName>CREATEAIMRETRIEVEDRETURNEDITEM</ProcedureName>
+		<parameterTypes>
+			<parameter>
+				<colName>FILENAME</colName>
+				<colType>1</colType>
+				<dataType>12</dataType>
+				<typeName>VARCHAR</typeName>
+			</parameter>
+			<parameter>
+				<colName>CONTENT</colName>
+				<colType>1</colType>
+				<dataType>12</dataType>
+				<typeName>VARCHAR</typeName>
+			</parameter>
+			<parameter>
+				<colName>DESCRIPTION</colName>
+				<colType>1</colType>
+				<dataType>12</dataType>
+				<typeName>VARCHAR</typeName>
+			</parameter>
+		</parameterTypes>
+	</config>
+</test_JdbcGeneralActivityExp>

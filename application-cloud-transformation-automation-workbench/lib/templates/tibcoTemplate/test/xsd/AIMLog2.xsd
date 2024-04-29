@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xsd:schema	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="AIMLog">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="LogLevel" type="xsd:integer" />
+				<xsd:element name="ServiceType" type="xsd:string" />
+				<xsd:element name="AIMRetrievalId" type="xsd:string" />
+				<xsd:element name="AIMConnectionId" type="xsd:string" />
+				<xsd:element name="Status" type="xsd:string" />
+				<xsd:element name="StartTime" type="xsd:integer" />
+				<xsd:element name="ResponseTime" type="xsd:integer" />
+				<xsd:element name="Message" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

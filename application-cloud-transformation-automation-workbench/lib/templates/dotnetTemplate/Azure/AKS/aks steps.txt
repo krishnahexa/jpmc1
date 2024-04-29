@@ -1,0 +1,37 @@
+https://docs.microsoft.com/en-us/learn/modules/aks-deploy-container-app/3-exercise-create-aks-cluster
+
+az login
+
+
+az account set --subscription "Amaze subscription Name"
+
+
+build image
+
+
+az acr build -t ProjectDirectoryXXX/ProjectNameXXX:3 -r amazecontainerregistry .
+
+get aks details
+
+az aks get-credentials --name amaze-Aks --resource-group Ab-InBevPOC
+
+
+create secret
+
+kubectl create secret docker-registry amaze-secret     --namespace default     --docker-server=amazecontainerregistry.azurecr.io    --docker-username=amazeContainerRegistry     --docker-password=XXX
+
+create deployment yml
+
+kubectl apply -f ./deployment.yml
+
+kubectl get deploy ProjectNameXXX-api
+
+create ingress
+
+kubectl apply -f ./ingress.yml
+
+create service
+
+kubectl apply -f ./service.yml
+
+

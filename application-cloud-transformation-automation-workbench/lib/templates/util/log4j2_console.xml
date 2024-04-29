@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout
+                pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable" />
+        </Console>
+        
+    </Appenders>
+ 
+    <Loggers>
+        <!-- LOG everything at the level mentioned -->
+        <Root level="info" includeLocation="false">
+            <AppenderRef ref="Console" />            
+        </Root>
+ 
+        <!-- LOG "|LOG_NAME|_log*" at TRACE level -->
+        <Logger name="|LOG_NAME|_log" level="trace"></Logger>
+    </Loggers>
+ 
+</Configuration>
+

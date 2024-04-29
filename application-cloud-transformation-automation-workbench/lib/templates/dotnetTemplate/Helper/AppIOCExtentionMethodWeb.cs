@@ -1,0 +1,20 @@
+﻿using Infrastructure.Common;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using $CONTROLLER_NAMESPACE$;
+
+namespace $APP_NAME$.Helper
+{
+    public static class AppIOCExtentionMethod
+    {
+        public static IServiceCollection AddIoC(this IServiceCollection services)
+        {
+            services.AddScoped<ConfigurationManager>();          
+
+            return services;
+        }
+    }
+}

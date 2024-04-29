@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xsd:schema xmlns = "http://xmlns.example.com/unique/default/namespace/1147726964046"
+	 targetNamespace = "http://xmlns.example.com/unique/default/namespace/1147726964046"
+	 xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
+	 elementFormDefault = "qualified">
+	<xsd:element name = "Logger" type = "root"/>
+	<xsd:complexType name = "root">
+		<xsd:sequence>
+			<xsd:element name = "processName" type = "xsd:string" minOccurs = "0"/>
+			<xsd:element name = "businessReferenceID" type = "xsd:string" minOccurs = "0"/>
+			<xsd:element name = "logLevel" type = "xsd:string" minOccurs = "0"/>
+			<xsd:element name = "Performance" type = "Details" minOccurs = "0"/>
+			<xsd:element name = "Warning" type = "Details" minOccurs = "0"/>
+			<xsd:element name = "Info" type = "Details" minOccurs = "0"/>
+			<xsd:element name = "Debug" type = "Details" minOccurs = "0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name = "Details">
+		<xsd:sequence>
+			<xsd:element name = "message" type = "xsd:string" minOccurs = "0"/>
+			<xsd:element name = "data" type = "xsd:string" minOccurs = "0"/>
+			<xsd:element name = "responseTime" type = "xsd:string" minOccurs = "0"/>
+			<xsd:element name = "flexField2" type = "xsd:string" minOccurs = "0"/>
+			<xsd:element name = "flexField3" type = "xsd:string" minOccurs = "0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

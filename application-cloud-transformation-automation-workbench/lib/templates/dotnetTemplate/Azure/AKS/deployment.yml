@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ProjectNameXXX-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ProjectNameXXX-api
+  template:
+    metadata:
+      labels:
+        app: ProjectNameXXX-api
+    spec:
+      containers:
+      - name: ProjectNameXXX-api
+        image: abinbevcontainerregistry.azurecr.io/ProjectNameXXX/ProjectNameXXX:4
+        imagePullPolicy: Always 
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 250m
+            memory: 512Mi
+        ports:
+        - containerPort: 80
+          name: ProjectNameXXX-api
+      imagePullSecrets:
+        - name: abinbev-secret
+   

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+    <Appenders>  
+        <RollingFile name="RollingFile"
+            fileName="./logs/|LOG_FILE_NAME|.log"
+			filePattern="./logs/$${date:yyyy-MM}/AccountService-%d{-dd-MMMM-yyyy}.log" immediateFlush="false">
+			|LAYOUT|		  
+            <Policies>
+                <!-- rollover on startup, daily and when the file reaches 
+                    10 MegaBytes -->
+                <OnStartupTriggeringPolicy />
+                <SizeBasedTriggeringPolicy
+                    size="10 MB" />
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+ 
+    <Loggers>
+        <!-- LOG everything at the level mentioned -->
+        <Root level="info" includeLocation="false">
+            <AppenderRef ref="RollingFile" />
+        </Root>
+ 
+        <!-- LOG "|LOG_NAME|_log*" at TRACE level -->
+        <Logger name="|LOG_NAME|_log" level="trace"></Logger>
+    </Loggers>
+ 
+</Configuration>
+

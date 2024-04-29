@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-abinbev-web-api
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: "addon-http-application-routing" 
+spec:
+  tls:
+  - hosts:
+    - abinbev.ca4ce060445a4f5b8a3b.centralus.aksapp.io
+  rules:
+  - host: abinbev.ca4ce060445a4f5b8a3b.centralus.aksapp.io
+    http:
+      paths:
+      - path: /ProjectNameXXX/
+        pathType: Prefix
+        backend:
+          service:
+            name: ProjectNameXXX-api
+            port:
+              number: 80
+      - path: /ppservice/
+        pathType: Prefix
+        backend:
+          service:
+            name: ppservice-api
+            port:
+              number: 80

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <name>AIMBulkFileWithPayeeName</name>
+    <resourceType>ae.shared.ParseSharedResource</resourceType>
+    <config xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <FormatType>Fixed format</FormatType>
+        <ColumnSeparator>,</ColumnSeparator>
+        <ColSeparatorRule>Treat all characters as entered as a single column separator string</ColSeparatorRule>
+        <LineSeparator>
+</LineSeparator>
+        <FillCharacter>Space</FillCharacter>
+        <LineLength>115</LineLength>
+        <OffsetString>CaptureDate(0,8)
+Amount(8,21)
+SequenceNumber(21,33)
+FieldSeparator(33,34)
+PayeeName(34,115)</OffsetString>
+        <DataFormat>
+            <xsd:element name="root">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="CaptureDate" type="xsd:string"/>
+                        <xsd:element name="Amount" type="xsd:string"/>
+                        <xsd:element name="SequenceNumber" type="xsd:string"/>
+                        <xsd:element name="FieldSeparator" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="PayeeName" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </DataFormat>
+    </config>
+</BWSharedResource>

@@ -1,0 +1,52 @@
+$$ImportStart$$
+using Apache.NMS;
+using Infrastructure.Common.EventBus;
+using Infrastructure.Common.EventBusActiveMQ;
+$$ImportEnd$$
+$$EventCodeStart$$
+public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
+         {
+             services.AddSingleton<IEventBus, ActiveMQEventBus>(sp =>
+                {
+                    var subscriptionClientName = configuration.GetSection("ActiveMQEventBus")["SubscriptionClientName"];
+                    var activeMQPersistentConnection = sp.GetRequiredService<IActiveMQPersistentConnection>();
+                    var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
+                    var logger = sp.GetRequiredService<ILogger<ActiveMQEventBus>>();
+                    var eventBusSubcriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
+
+                    var retryCount = 5;
+                    if (!string.IsNullOrEmpty(configuration.GetSection("ActiveMQEventBus")["EventBusRetryCount"]))
+                    {
+                        retryCount = int.Parse(configuration.GetSection("ActiveMQEventBus")["EventBusRetryCount"]);
+                    }
+
+                    return new ActiveMQEventBus(activeMQPersistentConnection, logger, iLifetimeScope, eventBusSubcriptionsManager, subscriptionClientName, retryCount);
+                });
+            
+
+            services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
+
+            return services;
+        }    
+
+      public static IServiceCollection AddIntegrationServices(this IServiceCollection services, IConfiguration configuration)
+       {
+               services.AddSingleton<IActiveMQPersistentConnection>(sp =>
+                {
+                    var logger = sp.GetRequiredService<ILogger<DefaultActiveMQPersistentConnection>>();
+
+                    var factory = new NMSConnectionFactory(new Uri(configuration.GetSection("ActiveMQEventBus")["EventBusConnection"]));
+                    
+                    var retryCount = 5;
+                    if (!string.IsNullOrEmpty(configuration.GetSection("ActiveMQEventBus")["EventBusRetryCount"]))
+                    {
+                        retryCount = int.Parse(configuration.GetSection("ActiveMQEventBus")["EventBusRetryCount"]);
+                    }
+
+                    return new DefaultActiveMQPersistentConnection(factory, logger, retryCount);
+                });
+            
+
+            return services;
+    }
+$$EventCodeEnd$$

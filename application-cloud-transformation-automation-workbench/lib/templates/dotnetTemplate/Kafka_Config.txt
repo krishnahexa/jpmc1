@@ -1,0 +1,50 @@
+$$ImportStart$$
+using Infrastructure.Common.EventBus;
+using Infrastructure.Common.EventBusKafka;
+using Confluent.Kafka;
+$$ImportEnd$$
+$$EventCodeStart$$
+     public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
+    {
+                
+            
+                services.AddSingleton<IEventBus, KafkaEventBus>(sp =>
+                {
+                    var subscriptionClientName = configuration.GetSection("KafkaEventBus")["SubscriptionClientName"];
+                    var kafkaPersistentConnection = sp.GetRequiredService<IKafkaPersistentConnection>();
+                    var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
+                    var logger = sp.GetRequiredService<ILogger<KafkaEventBus>>();
+                    var eventBusSubcriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
+
+                    var retryCount = 5;
+                    if (!string.IsNullOrEmpty(configuration.GetSection("KafkaEventBus")["EventBusRetryCount"]))
+                    {
+                        retryCount = int.Parse(configuration.GetSection("KafkaEventBus")["EventBusRetryCount"]);
+                    }
+
+                    return new KafkaEventBus(kafkaPersistentConnection, logger, eventBusSubcriptionsManager,  iLifetimeScope,  subscriptionClientName);
+                });
+              services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
+
+            return services;
+    }
+
+     public static IServiceCollection AddIntegrationServices(this IServiceCollection services, IConfiguration configuration)
+    {
+        
+            services.AddSingleton<IKafkaPersistentConnection>(sp =>
+                {
+                    var logger = sp.GetRequiredService<ILogger<DefaultKafkaPersistentConnection>>();
+
+                    var factory = new ClientConfig { BootstrapServers =configuration.GetSection("KafkaEventBus")["EventBusConnection"]};
+                    
+                    var retryCount = 5;
+                    if (!string.IsNullOrEmpty(configuration.GetSection("KafkaEventBus")["EventBusRetryCount"]))
+                    {
+                        retryCount = int.Parse(configuration.GetSection("KafkaEventBus")["EventBusRetryCount"]);
+                    }
+                    return new DefaultKafkaPersistentConnection(factory);
+                });            
+            return services;
+    }
+$$EventCodeEnd$$
