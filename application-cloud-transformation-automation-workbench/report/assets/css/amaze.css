@@ -1,0 +1,388 @@
+@font-face {
+    font-family: CenturyGothicBold;
+    src: url(../fonts/GOTHICB.TTF);
+}
+@font-face {
+    font-family: CenturyGothicRegular;
+    src: url(../fonts/GOTHIC.TTF);
+}
+@font-face {
+    font-family: CenturyGothicItalic;
+    src: url(../fonts/GOTHICI.TTF);
+}
+@font-face {
+    font-family: CenturyGothicBoldItalic;
+    src: url(../fonts/GOTHICBI.TTF);
+}
+
+body
+{
+    font-family:"CenturyGothicRegular" !important;
+}
+.OEGcontent-wrapper
+{
+    padding: 30px 15px 15px 15px;
+    background: #fff;
+}
+.OEGmenuList
+{
+	background: #f1f2f2;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: flex-start;
+}
+
+
+.OEGmenuList li a
+{
+    font-size:14px;
+    color: #353535;
+}
+.OEGmenuList a.nav-link.active:hover
+{
+	border:none;
+}
+.OEGmenuList a.nav-link.active
+{    
+    color: #0a0a0a;
+    border-bottom: solid 4px #ffa810;
+}
+.OEGmenuList li:hover
+{    
+    border-bottom: solid 4px #ffa810;
+}
+.innerBox
+{
+    background-color: #4aa3df;
+    color: #fff;
+    border-radius: 5px;
+    height: 202px;
+    padding: 10px;
+}
+.dataBox
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dataBox>div:first-child
+{
+    border-right:solid 1px rgba(255,255,255,0.25);
+}
+.dataBox>div
+{
+    padding: 0 10px;
+    text-align:center;
+    width: 50%;
+    align-self: flex-start
+}
+.dataBox>div p
+{
+    font-size:16px;
+    color: #fff;
+    margin:0;
+    margin-top: 10px;
+}
+.dataBox>div h3
+{
+    font-size:28px;
+    color: #fff;
+    margin:0;
+}
+.innerBox.orange
+{
+    background-color: #ea6153;
+}
+#menu1 .row div:nth-of-type(2) .box .innerBox.orange
+{
+	background-color:#323332;
+}
+.box1 p
+{
+  font-size:14px;
+  color: #000;  
+  font-weight: bold;
+}
+.chartBox>p
+{
+ font-size:14px;
+ color: #000;
+ margin: 0;
+ font-weight: bold;
+}
+h6{
+    font-size:16px;
+    color: #262626;
+    font-weight: bold;
+    margin: 20px 0;    
+}
+.box1
+{
+    border:solid 1px #c6c6c6;
+    border-radius: 2px;
+    padding: 0 10px;
+}
+.box1 .dataBox
+{
+    padding: 10px;
+}
+.borderRight
+{
+    border-right:solid 1px #c6c6c6;
+}
+.box1 .dataBox div
+{
+    font-size: 28px;
+    color: #303030;
+}
+.box1 .dataBox div span
+{
+    font-size:16px;
+    color: #303030;
+}
+.chartBox
+{
+    border:solid 1px #c6c6c6;
+    border-radius: 2px;
+    height: 440px;
+    padding: 10px;
+}
+.innerBox.green
+{
+    background-color: #19b698;
+}
+.innerBox>p
+{
+    font-size:14px;
+    color: #f8f8f8;          
+    font-family: "CenturyGothicRegular";   
+    margin: 0;
+    margin-bottom: 30px; 
+}
+
+.box h4{
+    font-size:16px;
+    color:#262626;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.customTabs
+{
+	 border:none;
+}
+.customTabs li a.nav-link.active
+{
+	 background-color:transparent;
+}
+.customTabs li:first-child
+{
+	margin-left:0 ;
+}
+.OEGheaderBox>div h1
+{
+	    margin: 0;
+    font-size: 16px;
+    color: #fff;
+}
+.OEGheaderBox>div
+{
+	    display:flex;
+		align-items:center;
+}
+.rightSide li span{
+	color:#eeeeee;
+	font-weight:normal;
+}
+.rightSide li:first-child{
+	margin-right:30px;
+}
+.rightSide li{
+	color:#fff;
+	font-weight:bold;
+	font-size:16px;
+}
+.customTabs li
+{
+	margin-left:60px;
+}
+.customTabs li a.nav-link
+{
+	 border:none;
+	 padding:12px 0;	
+}
+/*Header*/
+.OEGheader .OEGheaderBox
+{
+	    background-color: transparent;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+.OEGheader
+{
+	background-color: #252525;
+    min-height: 56px;
+    z-index: 999;
+    position: relative;
+    width: 100%;
+}
+.OEGprofileSec i
+{
+    font-size: 30px;
+    color: #fff;
+}
+.OEGheader .OEGprofileSec > p {
+    color: #fff;
+    opacity: 0.8;
+    font-size: 13px;
+}
+.OEGprofileSec
+{
+	background-color: transparent;
+    padding: 0 0 0 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.OEGheaderBox img
+{
+    width:50px;
+}
+.OEGprofileBox
+{
+    right:10px;
+}
+.OEGprofileSec>p
+{
+    margin-right: 15px;
+}
+.OEGprofileSec::after{
+    content:'';
+}
+.OEGheader .OEGheaderBox
+{
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.tableHeader>div{
+	    padding: 20px;
+    background-color: #f0f0f0;
+}
+.tableHeader div span
+{
+	font-size:13px;
+	color:#777777;
+}
+.tableHeader h4
+{
+	 background-color:#19B698;
+	 color:#fff;
+	 padding:10px 20px;
+	 height:48px;
+	 font-size:16px;
+	 margin:0;
+	 line-height:1.7;
+}
+.customSelect
+{
+	position:relative;
+	display:inline;	
+}
+.tableHeader select
+{
+	-webkit-appearance: none;
+	appearance: none;
+    border: none;
+    border-bottom: solid 1px #c0c0c0;
+    background: transparent;    
+    outline: none;
+	font-size:13px;
+	color:#777777;
+	width:30px;
+}
+.customSelect:after
+{
+	content:'\f078';
+	font-family:FontAwesome;	
+    position:absolute;		
+	font-size: 10px;    
+    right: 5px;
+    top: 6px;
+	color:#c0c0c0;
+}
+.table tbody tr:nth-child(odd) td
+{
+	 background:#f0f0f0;
+}
+.table tbody tr:nth-child(even) td
+{
+	 background:#e3e3e3;
+}
+.table tbody td
+{
+	 color:#797979;
+	 font-size:14px;
+	 padding-left:20px;
+
+}
+.table tbody td:first-child
+{
+	color:#0a90de;
+}
+.tableFooter
+{
+	padding:10px 20px;
+}
+.tableFooter,.paginationDiv
+{
+	display: flex;
+    justify-content: space-between;
+	align-items:center;
+}
+.tableFooter p
+{
+	font-size:14px;
+	color:#777777;
+}
+.paginationDiv ul
+{
+	font-size:0;
+}
+.paginationDiv ul li.current
+{
+	background:#19b698;
+	color:#fff;
+	border:solid 1px transparent;
+}
+.paginationDiv span,.paginationDiv ul li
+{
+	font-size: 13px;
+    color: #777777;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #d1d1d1;
+	margin:0;
+	margin-right:0 !important;
+	cursor:pointer;
+}
+.menuList
+{
+	padding:0 15px;
+}
+.table thead th
+{
+	border:none;
+	 border-top:solid 0.5px #eae6e6;
+	 border-bottom:solid 0.5px #eae6e6;
+	 background:#f0f0f0;
+	 color:#2d2d2d;
+	 font-size:14px;
+	 padding:14px 20px;
+}
